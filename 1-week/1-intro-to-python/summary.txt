@@ -1,0 +1,13 @@
+1. What is Python?
+2. Python Installation
+3. VS code (python, code runner)
+4. Variables
+5. int
+6. string 
+7. boolean
+8. type
+9. print
+10. f string
+11. input
+12. comments
+

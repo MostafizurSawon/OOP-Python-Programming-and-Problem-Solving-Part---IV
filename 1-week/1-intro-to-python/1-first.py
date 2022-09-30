@@ -4,3 +4,8 @@ print("Hello Python")
  Control + /
 """
 #commented
+
+x="Learning"
+y="Python"
+z=x+y
+print(z)
