@@ -1,0 +1,10 @@
+https://docs.python.org/3/tutorial/modules.html#:~:text=A%20module%20is%20a%20file,global%20variable%20__name__%20.
+
+
+https://pyautogui.readthedocs.io/en/latest/
+    pip install pyautogui
+
+https://pypi.org/project/opencv-python/
+    pip install opencv-python
+
+https://docs.python.org/3/tutorial/errors.html

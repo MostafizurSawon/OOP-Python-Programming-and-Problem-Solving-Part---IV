@@ -14,12 +14,14 @@ def add(num1, num2 = 3):    #parameter must be at last position (num1, num4,num3
 
 # print(add(5))
 
-def mul2(*num): #arges = *num
+def mul2(*num): #args = *num
     # print(num)
     res = 1
     for n in num:
         # print(n)
         res = res * n
-    print(res)
+    # print(res)
+    return res
 
 output2 = mul2(3,4,5,6)
+print(output2)

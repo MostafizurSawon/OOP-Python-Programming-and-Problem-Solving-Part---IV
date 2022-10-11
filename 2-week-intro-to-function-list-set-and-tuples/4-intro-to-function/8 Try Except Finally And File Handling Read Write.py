@@ -1,5 +1,5 @@
 try:
-    num = 50/1
+    num = 50/0
     print(num)
 except:
     print('Something went wrong')

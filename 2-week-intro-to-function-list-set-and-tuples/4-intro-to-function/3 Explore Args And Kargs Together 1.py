@@ -1,7 +1,7 @@
 def add(num1,num2, *num):
-    # print(num1)
-    # print(num2)
-    # print(num)
+    print(num1)
+    print(num2)
+    print(num)
     return num
 
 add(3,4,5,6,7)
@@ -17,7 +17,7 @@ name = full_name(l_name = 'Rahman', f_name = 'Mostafizur')
 def long_name(**kargs):         #key args
     print(kargs)
 
-#long_name(first = "Dr.",last = 'Chowdhury', middle = 'Sawon')
+# long_name(first = "Dr.",last = 'Chowdhury', middle = 'Sawon')
 
 def name_mixed(first,last, **name_parts):
     print(first, last, name_parts)
