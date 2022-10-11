@@ -1,4 +1,4 @@
-numbers = [23, 12, 24, 16,12, 39, 26, 71]
+numbers = [23, 12, 24, 16, 12, 39, 26, 71]
 
 # print(numbers[2])
 # print(numbers[-6 ])
@@ -15,13 +15,15 @@ numbers = [23, 12, 24, 16,12, 39, 26, 71]
 
 numbers.append(89)
 numbers[len(numbers):] = [99]
+# print(numbers)
 
 numbers.insert(2,100)
 numbers.remove(71)
 numbers.pop(4)
 # numbers.clear()
 # print(numbers)
-# numbers.index(12,1,5)
+
+# print(numbers.index(12,1,5))
 
 numbers.sort()
 
@@ -31,8 +33,8 @@ numbers.reverse()
 
 num2 = numbers.copy()
 
-print(numbers[:])
-print(num2)
+# print(numbers[:])
+# print(num2)
 
 
 

@@ -29,7 +29,7 @@ for mark in marks:
 # for subject, mark in marks.items():
 #     print(subject, mark)
 
-for i,num in enumerate(numbers):    #will show index number
+for i,num in enumerate(numbers):    #will show index number vvvvv
     print(i,"->",num)
 
 

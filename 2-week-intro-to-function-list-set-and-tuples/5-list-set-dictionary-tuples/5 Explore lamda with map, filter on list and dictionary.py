@@ -19,7 +19,7 @@ double_lambda = lambda x: x*2
 
 doubles_nums = map(lambda x: x*2, nums)
 
-# print(f'{nums} -> {list(doubles_nums)}')
+print(f'{nums} -> {list(doubles_nums)}')
 
 even_nums = filter(lambda num: num % 2 == 0 ,nums)
 # print(f'{nums} -> {list(even_nums)}')
@@ -36,4 +36,4 @@ senior_artists = filter(lambda actor: actor['age'] > 35, actors)
 # print(list(senior_artists))
 
 junior_artists = filter(lambda actor: actor['age'] < 35, actors)
-print(list(junior_artists))
+# print(list(junior_artists))

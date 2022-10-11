@@ -9,11 +9,12 @@ nums_tuple = (12, 14, 17)
 # print(numbers_tuple[2])
 
 tuple2D = ([23,34,12], [12,23,])
-tuple2D[0][1] = 78      #works
+tuple2D[1][1] = 78      #works
 # print(tuple2D)
 
 short_tuple = 3,
-# short_tuple[1] = 2  wont work
+#short_tuple[1] = 2  #wont work
+# print(short_tuple)
 
 tuple_from_list = tuple(numbers)
 print(tuple_from_list, short_tuple)
