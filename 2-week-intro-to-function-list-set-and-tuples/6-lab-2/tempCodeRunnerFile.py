@@ -1,2 +1,1 @@
-, 'wb') as image:
-    image.write(res.c
+PyWallpaper.change_wallpaper("C:\phitron\apod.png")
