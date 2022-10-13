@@ -1,4 +1,6 @@
 def print_hi():
-    print("hi")
+    # print("hi")
+    str = "hi"
+    return str
 
-print(print_hi())
+print(print_hi()) # you can't change this lin
