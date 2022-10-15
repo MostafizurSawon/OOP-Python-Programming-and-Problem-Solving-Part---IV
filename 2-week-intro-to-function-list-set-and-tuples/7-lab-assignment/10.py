@@ -6,16 +6,19 @@ s = "Oh, I got two tickets for Dhaka. I and Emelia love to visit different place
 
 def create_new_string(a, s):
     new = ""
-    split_str = re.split('; |, | ', s)
-    split_sent = re.split('. ', s)
+    s = s.replace('.', '')
+    s = re.split(', | ', s)
+    # print(s)
     for word in a:
-        for j in range(len(split_str)):
-            if word.lower() == split_str[j].lower():
-                new += split_str[j+1]
+        # print(word)
+        # print(len(s))
+        for i in range(len(s)):
+            if word.lower() == s[i].lower() and s[i+1] != "visit":
+                new += s[i+1]
                 new += " "
-                j+=1
-    with open('out.txt', 'w') as f:
-        f.write(new)
-
+                i+=1
+    with open('out.txt', 'w') as output:
+        output.write(new)
+        print("Your result is at './out.txt'")
 
 create_new_string(a, s)
