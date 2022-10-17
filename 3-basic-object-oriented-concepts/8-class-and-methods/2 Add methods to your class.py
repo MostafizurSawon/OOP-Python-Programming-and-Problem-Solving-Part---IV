@@ -14,6 +14,7 @@ class Phone:
         return sms
 
 my_phone = Phone()
+print(my_phone.features[2])
 my_phone.call()         #TypeError: Phone.call() takes 0 positional arguments but 1 was given
 
 sms = my_phone.send_sms('Hello', 8801920693718)
