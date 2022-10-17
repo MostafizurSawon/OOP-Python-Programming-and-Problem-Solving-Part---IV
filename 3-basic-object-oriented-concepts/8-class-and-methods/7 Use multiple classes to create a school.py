@@ -48,3 +48,5 @@ print(my_school.students)
 
 my_school.get_students()
 
+print(type(student_1))
+
