@@ -1,8 +1,14 @@
 class Shopping:
+    mall = 'Jamuna Future Park'
+    hours = []
+
     def __init__(self, customer):
         self.customer = customer
         self.items = []
         self.total = 0
+
+    def opening_hour(cls,day):
+        pass
 
     @staticmethod
     def multiply(a, b):
@@ -22,13 +28,5 @@ class Shopping:
     def checkout(self):
         pass
 
-result = Shopping.multiply(47,2)
-print(result)
 
-my_shopping = Shopping('Sawon')
-my_shopping.add_to_total(599)
-print(my_shopping.total)
-
-result_3 = my_shopping.multiply(15,5)
-print(result_3)
-# result = Shopping.add_to_total(self, amount)
+# https://www.tutorialspoint.com/class-method-vs-static-method-in-python
