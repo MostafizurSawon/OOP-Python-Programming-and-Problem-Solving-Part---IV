@@ -27,9 +27,13 @@ class Person:
         return self.age + other.age
         # return self.money + other.money
 
+    def __repr__(self):
+        return f'Name: {self.name}, age: {self.age}, money: {self.money}'
+
 gopi = Person('Gopi', 28, 800)
 dalim = Person('dalim', 27, 767)
 
-print(dalim+gopi)
+# print(dalim+gopi)
 # print(type(gopi))
 
+print(gopi)
