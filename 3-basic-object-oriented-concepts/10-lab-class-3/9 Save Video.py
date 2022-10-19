@@ -40,6 +40,9 @@ class Window(QWidget):
         self.rec_icon = QIcon(rec_icon_path)
         self.stop_icon = QIcon(stop_icon_path)
 
+        # to save the video 
+        self.fourcc = cv2.VideoWriter_fourcc(*'XVID')
+
         #setup the window
         self.setWindowTitle("My camera app")
         self.setGeometry(100, 200, self.window_width, self.window_height)
@@ -89,9 +92,10 @@ class Window(QWidget):
     def update(self):
         """ update frames """
         _, self.frame = self.cap.read()
-
+        copy_frame = self.frame
         if self.record_flag == True:
             print("Recording....")
+            self.out.write(copy_frame)       
             self.rec_btn.setIcon(self.stop_icon)
             self.frame = cv2.circle(self.frame, (20,70), 5, (0,0,255), 10)
 
@@ -124,6 +128,9 @@ class Window(QWidget):
         else:
             self.record_flag = True
             print("Starting to record")
+            self.get_time()
+
+            self.out = cv2.VideoWriter(f"{self.dt}.avi", self.fourcc, 20.0, (640,480))
 
     def get_time(self):
         now = datetime.datetime.now()
@@ -131,14 +138,13 @@ class Window(QWidget):
         print(self.dt)
 
 # run
+if __name__ == '__main__':
+    cam_icon_path = 'assets/camera.png'
+    rec_icon_path = 'assets/video-camera.png'
+    stop_icon_path = 'assets/stop-button.png'
 
-cam_icon_path = 'assets/camera.png'
-rec_icon_path = 'assets/video-camera.png'
-stop_icon_path = 'assets/stop-button.png'
-
-app = QApplication(sys.argv)
-win = Window()
-sys.exit(app.exec())
-
+    app = QApplication(sys.argv)
+    win = Window()
+    sys.exit(app.exec())
 
 
