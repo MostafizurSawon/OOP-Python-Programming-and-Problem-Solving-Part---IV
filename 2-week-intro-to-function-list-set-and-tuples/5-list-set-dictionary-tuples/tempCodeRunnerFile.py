@@ -1,2 +1,3 @@
-d(25)
-# numbers_set.add(
+n marks:
+#     val=marks['physic']
+#     val=mark

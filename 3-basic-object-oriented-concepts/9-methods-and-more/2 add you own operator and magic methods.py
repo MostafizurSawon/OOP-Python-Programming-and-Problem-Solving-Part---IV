@@ -3,7 +3,7 @@
 # https://docs.python.org/3/reference/datamodel.html
 
 class Person:
-    def __init__(self, name, age, money,height) -> None:
+    def __init__(self, name, age, money, height) -> None:
         self.name = name
         self.age = age
         self.money = money

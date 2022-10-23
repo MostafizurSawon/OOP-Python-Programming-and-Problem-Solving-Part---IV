@@ -43,10 +43,10 @@ students = [student_1, student_2, student_3]
 
 my_school = School(school_name, teachers, courses, students)
 
-print(my_school)
+# print(my_school)
 print(my_school.students)
 
 my_school.get_students()
 
-print(type(student_1))
+# print(type(student_1))
 

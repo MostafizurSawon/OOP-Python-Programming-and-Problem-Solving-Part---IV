@@ -33,7 +33,7 @@ class Person:
 gopi = Person('Gopi', 28, 800)
 dalim = Person('dalim', 27, 767)
 
-# print(dalim+gopi)
+print(dalim+gopi)
 # print(type(gopi))
 
 print(gopi)

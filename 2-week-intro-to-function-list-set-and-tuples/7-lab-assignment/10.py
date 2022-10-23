@@ -19,6 +19,7 @@ def create_new_string(a, s):
                 i+=1
     with open('out.txt', 'w') as output:
         output.write(new)
+        # output.close()
         print("Your result is at './out.txt'")
 
 create_new_string(a, s)

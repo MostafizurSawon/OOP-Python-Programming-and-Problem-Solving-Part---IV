@@ -11,5 +11,5 @@ marks_values = marks.values()
 # marks.clear()
 
 marks_items = marks.items()
-# print(marks)
+print(marks)
 # print(marks_items)

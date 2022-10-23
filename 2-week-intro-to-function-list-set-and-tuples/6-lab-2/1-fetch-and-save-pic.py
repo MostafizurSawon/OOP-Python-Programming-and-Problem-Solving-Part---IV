@@ -21,7 +21,7 @@ dict_content = json.loads(content)
 # print(dict_content)
 
 # get the image url
-img_url = dict_content['hdurl']
+img_url = dict_content['url']
 
 # print(img_url)
 
