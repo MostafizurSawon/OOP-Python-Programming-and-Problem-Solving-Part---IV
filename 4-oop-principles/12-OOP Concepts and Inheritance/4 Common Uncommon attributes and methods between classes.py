@@ -1,4 +1,5 @@
 #laptop, phone, watch, tablet
+
 class laptop:
     def __init__(self, brand, price, color,disk_size):
         self.brand = brand

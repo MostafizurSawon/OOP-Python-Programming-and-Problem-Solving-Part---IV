@@ -25,7 +25,9 @@ class Passenger:
         pass
 
     def purchase_ticket(self, destination, money):
-        pass
+        self.destination = destination
+        self.money = money
+        return f'Going to {destination} with {money} taka'
 
 class Manager:
     def __init__(self, name, mobile, department):
@@ -36,4 +38,5 @@ class Counter:
         pass
 
 sawon = Passenger('Sawon', '01920693718', 'Dhaka')
+print(sawon.purchase_ticket('Dhaka', 580))
         

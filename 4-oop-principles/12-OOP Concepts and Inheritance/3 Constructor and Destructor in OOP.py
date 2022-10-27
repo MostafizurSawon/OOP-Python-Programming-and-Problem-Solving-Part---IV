@@ -16,7 +16,7 @@ class School:
         for i, grade in enumerate(self.grades):
             if grade.name == name:
                 idx = i
-            del self.grades[idx]
+        del self.grades[idx]
 
 class Grade:
     def __init__(self,name, teacher):
@@ -39,5 +39,5 @@ print(oxford.grades)
 oxford.remove_grade('class 8')
 print(oxford.grades)
 
-# print('code running done!')
-# time.sleep(10)
+print('code running done!')
+time.sleep(10)
