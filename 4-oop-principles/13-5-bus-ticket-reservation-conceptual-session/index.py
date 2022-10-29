@@ -1,4 +1,5 @@
 class User:
+    history = []
     def __init__(self, username, password):
         self.username = username
         self.password = password
@@ -52,6 +53,7 @@ class BusCounter(BusCompany):
     bus_seat = 20
     def reservation(self):
         bus_no = int(input("Enter Bus Number: "))
+        flag = 1
         for bus in self.total_bus_lst:
             if bus_no == bus['coach']:
                 passenger = input("Enter your Name: ")
@@ -63,9 +65,12 @@ class BusCounter(BusCompany):
                     print("Seat already booked!")
                 else:   # seat booking confirm
                     bus['seat'][seat_no-1] = passenger
+                    print("Ticket booked sucessfully!\nEnjoy your journey!")
             else:
-                print("No bus number available!")
+                flag = 0
                 break
+        if flag == 0:
+            print("No Bus Available!")
         
         # for bus in self.total_bus_lst:
         #     print(bus['seat'])
@@ -98,6 +103,10 @@ class BusCounter(BusCompany):
                         print(f"{a}. {bus['seat'][a-1]}", end="\t")
                         a+=1
                     print()
+                print('*'*50)
+            else:
+                print("No bus available")
+                break
                     
     def get_users(self):
         return self.user_lst
@@ -140,8 +149,10 @@ class BusCounter(BusCompany):
                         print(f"{a}. {bus['seat'][a-1]}", end="\t")
                         a+=1
                     print()
+                print('*'*50)
 
 while True:
+    company = BusCompany()
     counter = BusCounter()
     print("1. Create an account\n2. Login To Your Account\n3. Exit")
     user_input = int(input("Enter your choice : "))
@@ -152,36 +163,78 @@ while True:
     elif user_input == 2:
         name = input("Enter your name : ")
         password = input("Enter your password : ")
-        isAdmin = False
+        
         flag = 0
+        isAdmin = False
+        
         if name == "admin" and password == "4321":
             isAdmin = True
-        if isAdmin == False:
-            
 
+        if isAdmin == False:    # Normal user
+            for user in counter.get_users():    #Checking if authenticate user
+                if user['username'] == name and user['password'] == password:
+                    flag = 1
+                    break
+            if flag:    #flag true
+                while True:
+                    print(f"\n{' '*10}Welcome to BUS TICKET BOOKING SYSTEM")
+                    print(f"1. Available Buses \n2. Show Bus Info \n3. Reservation \n4. Exit")
+                    choice = int(input("Enter your choice: "))
+                    if choice == 4:
+                        print("successfully exited!")
+                        break
+                    elif choice == 1:
+                        counter.available_buses()
+                    elif choice == 2:
+                        counter.showBusInfo()
+                    elif choice == 3:
+                        counter.reservation()
+            else:
+                print("Don't know you!")
+        else:
+            while True:
+                print(f"Hello Admin, welcome back!")
+                print(f"1. Install Bus \n2. Available Bus \n3. Show Bus \n4. Show user list\n5. Exit")
+                choice = int(input("Enter your choice: "))
+                if choice == 5:
+                    print("Tata bye bye Admin!")
+                    break
+                elif choice == 1:
+                    counter.install_bus()
+                elif choice == 2:
+                    counter.available_buses()
+                elif choice == 3:
+                    counter.showBusInfo()
+                elif choice == 4:
+                    counter.get_users()
 
-
-# 1. create an account  ->  create_new_account()
-# 2. login to your account  ->  Authenticate User
-#                           ->  1.Available buses 
-#                           ->  2.Reservation
-#                           ->  3.Show bus info
-#                           ->  Administrator   admin   4321
-#                           ->  1. Install Buses
-#                           ->  2. See available buses
-#                           ->  3. See total user list
-# 3. Exit
+""" 
+1. create an account  ->  create_new_account()
+2. login to your account  ->  Authenticate User
+                          ->  1.Available buses 
+                          ->  2.Reservation
+                          ->  3.Show bus info
+                         ==>  Administrator   admin   4321
+                          ->  1. Install Buses
+                          ->  2. See available buses
+                          ->  3. See total user list
+3. Exit
+ """
 
 
 # company = BusCompany()
 # company.install_bus()
 
-b = BusCounter()
-b.install_bus()
-b.install_bus()
+# b = BusCounter()
+# b.install_bus()
+# b.install_bus()
+
+
 # b.reservation()
 # b.showBusInfo()
-b.available_buses()
-b.create_account()
+
+
+# b.available_buses()
+# b.create_account()
 
 
