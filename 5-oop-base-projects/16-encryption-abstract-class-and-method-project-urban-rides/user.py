@@ -1,5 +1,8 @@
 import hashlib
+from random import random, randint
 from brta import BRTA
+from vehicles import Bike, Car, Cng
+from ride_manager import uber
 
 license_authority = BRTA()
 
@@ -11,8 +14,8 @@ class User:
         with open('users.txt', 'w') as file:
             file.write(f'{email} {pwd_encrypted}')
         file.close()
-        print(self.name, 'user created successfully!')
-
+        print(self.name, 'user created')
+    
     @staticmethod
     def log_in(email, password):
         stored_password = ''
@@ -25,12 +28,13 @@ class User:
 
         hashed_password = hashlib.md5(password.encode()).hexdigest()
         if hashed_password == stored_password:
-            print('yay valid user!')
+            print('valid user')
             return True
         else:
             print('invalid user')
             return False
         # print('password found', stored_password)
+
 
 class Rider(User):
     def __init__(self, name, email, password, location, balance) -> None:
@@ -85,15 +89,25 @@ class Driver(User):
         self.location = destination
 
 
+rider1 = Rider('rider1', 'rider1@gmail.com', 'rider1', randint(0, 30), 5000)
+rider2 = Rider('rider2', 'rider2@gmail.com', 'rider2', randint(0, 30), 5000)
+rider3 = Rider('rider3', 'rider3@gmail.com', 'rider3', randint(0, 30), 5000)
 
-u1 = User('Sawon', 'sawon@email.com', 'under2u@t')
-User.log_in('sawon@email.com', 'under2u@t')
+driver1 = Driver('driver1', 'driver1@gmail.com', 'driver1', randint(0, 30), 5645)
+driver1.take_driving_test()
+driver1.register_a_vehicle('car', 1245, 10)
 
-abir = Driver('abir bro', 'abir@bro.com', 'abir321', 'Dhanmondi', 41)
+driver2 = Driver('driver2', 'driver2@gmail.com', 'driver2', randint(0, 30), 5645)
+driver2.take_driving_test()
+driver2.register_a_vehicle('car', 1245, 10)
 
-result = license_authority.validate_license(abir.email, abir.license)
-print(result)
+driver3 = Driver('driver3', 'driver3@gmail.com', 'driver3', randint(0, 30), 5645)
+driver3.take_driving_test()
+driver3.register_a_vehicle('car', 2145, 10)
 
-abir.take_driving_test()
-result = license_authority.validate_license(abir.email, abir.license)
-print(result)
+driver4 = Driver('driver4', 'driver4@gmail.com', 'driver4', randint(0, 30), 5645)
+driver4.take_driving_test()
+driver4.register_a_vehicle('car', 3245, 10)
+
+print(uber.get_available_cars())
+uber.find_a_vehicle(rider1, 'car', 90)
