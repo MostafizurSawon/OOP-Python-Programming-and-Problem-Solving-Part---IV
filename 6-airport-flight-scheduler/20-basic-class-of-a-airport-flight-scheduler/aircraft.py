@@ -1,4 +1,3 @@
-#1
 class Aircraft:
     def __init__(self, make, code, typ, flight_range) -> None:
         self.make = make
